@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookbeeper</title>
+    <!-- my css file -->
+    <link rel="stylesheet" href="start.css">
+    <!-- import vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
+
+
+</head>
+
+<header>
+    <div class="header">
+        <h1>
+            Bookkeeper
+        </h1>
+
+    </div>
+</header>
+
+
+
+<body>
+
+    <div id="start1">
+
+
+
+
+
+        <ul class="ul">
+            <li class="li1">
+                <router-link to="/signup">Sign up</router-link>
+            </li>
+
+            <li class="li2">
+                <router-link to="/login">Login</router-link>
+            </li>
+        </ul>
+
+
+
+
+
+
+        <transition name="slide-fade" mode="out-in">
+            <router-view class="page"></router-view>
+        </transition>
+
+    </div>
+
+
+
+    <div id="signup">
+
+        <template id="signup-form">
+
+
+
+
+            <div class="div2">
+                <label class="label"> E-mail</label>
+                <br>
+
+                <input type="text" />
+                <br>
+
+                <label class="label"> Password</label>
+                <br>
+
+
+                <input type="password" placeholder="Include 6 or more characters" />
+
+
+                <br>
+                <button @click="clickjump()" type="submit" class="button">Submit</button>
+
+            </div>
+
+
+        </template>
+
+    </div>
+
+    
+    <template id="login-form">
+
+        <div class="div2">
+            <label class="label"> E-mail</label>
+            <br>
+
+            <input type="text" />
+            <br>
+
+            <label class="label"> Password</label>
+            <br>
+
+
+            <input type="password" />
+
+
+            <br>
+            <button @click="clickjump()" type="submit" class="button">Login</button>
+
+        </div>
+
+
+    </template>
+
+
+
+
+    <!-- js file -->
+    <script src="start.js"></script>
+</body>
+
+</html>

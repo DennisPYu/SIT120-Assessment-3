@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookbeeper</title>
+    <!-- my css file -->
+    <!-- import vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/vuex@4.0.0/dist/vuex.global.js"></script>
+    <link rel="stylesheet" href="Index.css">
+
+
+</head>
+
+
+
+<body>
+    <div id="start2" class="container">
+
+
+        <div class="divnav">
+
+            Bookkeeper
+
+        </div>
+
+        <ul class="sidenav">
+            <div class="divblank">
+            </div>
+            <li>
+                <router-link to="/dashboard">Dashboard</router-link>
+            </li>
+
+            <li>
+                <router-link to="/statistics"> Statistics </router-link>
+            </li>
+
+            <li>
+                <router-link to="/history1"> History </router-link>
+            </li>
+
+            <li>
+                <router-link to="/setting">Setting</router-link>
+            </li>
+
+        </ul>
+
+
+        <transition name="slide-fade" mode="out-in">
+            <router-view class="page"></router-view>
+        </transition>
+
+
+
+    </div>
+
+
+
+    <div id="start2">
+
+        <template id="start2-page">
+
+            <div class="content">
+                <p class="p">
+                    {{message}}</p>
+            </div>
+
+        </template>
+
+
+    </div>
+
+    <div id="dashboard">
+
+        <template id="dashboard-page">
+
+            <div class="content">
+
+                <div class="div2">
+                    <label v-model="message1" class="label">name</label>
+                    <br>
+                    <input type="text" />
+                    <br>
+
+                    <label v-model="message2" class="label"> Price</label>
+                    <br>
+                    <input type="text" />
+
+                    <br>
+                    <button v-on:click="add">Add</button>
+
+                    <li v-for="item in items" >
+                        {{item.name}}
+                        {{item.price}}
+                        
+                    </li>
+
+                </div>
+
+
+
+
+
+            </div>
+
+        </template>
+
+
+    </div>
+
+    <div id="statistics">
+
+        <template id="statistics-page">
+            <div class="content">
+                <p class="p">
+                    {{message}}</p>
+            </div>
+        </template>
+
+
+    </div>
+
+    <div id="history1">
+
+        <template id="history-page">
+            <div class="content">
+                <p class="p">
+                    {{message}}</p>
+            </div>
+        </template>
+
+
+    </div>
+
+
+    <div id="setting">
+
+        <template id="setting-page">
+            <div class="content" id="color" v-bind:style="{ backgroundColor: color}">
+                <p class="p">
+                    {{message}}</p>
+
+                <div>
+                    <h1>Change a color</h1>
+
+                    <input type="color" v-model="color" />
+
+                </div>
+            </div>
+        </template>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- js file -->
+
+
+
+    <script src="Index.js"></script>
+</body>
+
+</html>
